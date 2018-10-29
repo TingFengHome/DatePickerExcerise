@@ -1,0 +1,92 @@
+* {
+  //border: solid 1px;
+  margin: 0px;
+  padding: 0px;  
+}
+
+
+@mixin size($w,$h:$w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body, #app{
+  @include size (100%);
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+  @include flexCenter;
+}
+
+.phone {
+  @include size(360px, 560px);
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 5px;
+
+  >.calender{
+    >.head {
+      display: flex;
+      padding-top: 50px;
+      padding-bottom: 5px;
+      text-align: center;
+
+      >.tag {
+        width: calc(100% / 7);
+      }
+    }
+    >.body {
+      display: flex;
+      flex-wrap: wrap;
+      
+      >.dayBox {
+        box-sizing: border-box;
+        width: calc(100% / 7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        padding: 5px 0px;
+
+        &.active{
+          .infos {
+            border-radius: 50%;
+            background-color: #222;
+            color: white;
+          }
+        }
+
+        >.infos {
+          text-align: center;
+          @include size(40px);
+
+          >.ADdays {
+            font-size: 20px;
+            padding-top: 1px;
+          }
+          >.lundar {
+            font-size: 12px;
+            //margin-top: -4px;
+          }
+        }
+
+        >.eventDot {
+          @include size(6px);
+          background-color: #ddd;
+          border-radius: 50%;
+          margin-top: 5px;
+          opacity: 0;
+
+          &.hasEvent{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
