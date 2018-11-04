@@ -64,12 +64,13 @@ html, body, #app{
         >.infos {
           text-align: center;
           @include size(40px);
+          cursor: pointer;
 
           >.ADdays {
             font-size: 20px;
             padding-top: 1px;
           }
-          >.lundar {
+          >.lunar {
             font-size: 12px;
             //margin-top: -4px;
           }
