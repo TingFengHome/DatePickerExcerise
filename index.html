@@ -34,7 +34,12 @@
             <div class="title">{{todo.title}}</div>
             <div class="removeBTN" @click='nowEvents.splice(todoID,1)'> X </div>
           </li>
-        </transition-group> >
+        </transition-group>
+        <div class="form">
+          <input type="text" placeholder="事件標題" v-model='newItem.title'>
+          <input type="text" placeholder="時間" v-model='newItem.time'>
+          <button @click='addItem'>加入</button>
+        </div>
       </div>
     </div>
   </div>

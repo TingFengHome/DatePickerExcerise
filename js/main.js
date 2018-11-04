@@ -6,13 +6,17 @@ new Vue({
     selectedDay: 0,
     startDay: 1,
     lunarPan: 5,
+    newItem: {
+      title: '標題',
+      time: '20:00',
+    },
   },
 
   computed: {
     nowEvents(){
       var day = this.days[this.selectedDay];
       if (day){
-        return day.events;
+        return this.sortTime(day.events);
       }else{
         return [];
       }
@@ -70,6 +74,20 @@ new Vue({
       }else if (ADdays == 30){
         return '三十';
       };
+    },
+
+    addItem(){
+      this.days[this.selectedDay].events.push(
+        JSON.parse(JSON.stringify(this.newItem))
+      );
+    },
+
+    sortTime(events){
+      return events.sort(
+        (a,b) => {
+          return parseInt(a.time.replace(':',''))-parseInt(b.time.replace(':',''))
+        }
+      )
     }
   }
 })

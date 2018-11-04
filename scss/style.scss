@@ -103,7 +103,7 @@ html, body, #app{
         border-bottom: 1px solid rgba(0,0,0,0.1);
         height: 40px;
 
-        >.time,.title {
+        >.time,.title,.removeBTN {
           padding: 4px 10px;
         }
 
@@ -112,6 +112,12 @@ html, body, #app{
           border-right: solid 2px; 
           border-color: #3ca9f2;
         }
+      }
+      .fade-enter-active,.fade-leave-active{
+        transition: 0.5s;
+      }
+      .fade-enter,.fade-leave-to{
+        opacity: 0;
       }
     }
   }
