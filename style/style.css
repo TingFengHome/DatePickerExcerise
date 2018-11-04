@@ -1,0 +1,137 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.phone {
+  width: 360px;
+  height: 560px;
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 5px;
+}
+
+.phone > .calender > .head, .phone > .calender .body {
+  background-color: #f3f3f3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5px;
+}
+
+.phone > .calender > .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.phone > .calender > .head > .tag {
+  width: calc(100% / 7);
+}
+
+.phone > .calender > .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.phone > .calender > .body > .dayBox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: calc(100% / 7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0px;
+}
+
+.phone > .calender > .body > .dayBox.active .infos {
+  border-radius: 50%;
+  background-color: #222;
+  color: white;
+}
+
+.phone > .calender > .body > .dayBox > .infos {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.phone > .calender > .body > .dayBox > .infos > .ADdays {
+  font-size: 20px;
+  padding-top: 1px;
+}
+
+.phone > .calender > .body > .dayBox > .infos > .lunar {
+  font-size: 12px;
+}
+
+.phone > .calender > .body > .dayBox > .eventDot {
+  width: 6px;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin-top: 5px;
+  opacity: 0;
+}
+
+.phone > .calender > .body > .dayBox > .eventDot.hasEvent {
+  opacity: 1;
+}
+
+.phone > .calender > .todo > .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40px;
+}
+
+.phone > .calender > .todo > .items > .time, .phone > .calender > .todo > .items .title, .phone > .calender > .todo > .items .removeBTN {
+  padding: 4px 10px;
+}
+
+.phone > .calender > .todo > .items > .time {
+  width: 55px;
+  border-right: solid 2px;
+  border-color: #3ca9f2;
+}
+
+.phone > .calender > .todo .fade-enter-active, .phone > .calender > .todo .fade-leave-active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.phone > .calender > .todo .fade-enter, .phone > .calender > .todo .fade-leave-to {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */
