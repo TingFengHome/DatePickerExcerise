@@ -7,17 +7,30 @@ new Vue({
     startDay: 1,
     lunarPan: 5,
   },
+
   mounted() {
     for(var i = 1; i <= 31; i++){
       var newDay = {
         ADday: i,
-        events: [
-          {name: 'test'},
-        ]
+        events: []
       };
+
+      if (Math.random()<0.4){
+        var count = Math.random() * 3;
+        var minute = parseInt(Math.random()*3)*15;
+        for( o = 0; o < count; o++){
+          newDay.events.push({
+            title: ['整理房間','約會','學習程式語言','運動','看書']
+            [parseInt(Math.random()*3)],
+            time: parseInt(Math.random()*24+':'+ (minute==0?'0':'') + minute)
+          });
+        }
+      }
+
       this.days.push(newDay);
-    }
+    };  
   },
+
   methods: {
     getPan(id){
       if (id!=0)
@@ -25,10 +38,12 @@ new Vue({
       else 
         return {'margin-left':'calc('+this.startDay+' * 100% / 7)'};
     },
+    
     chineseADdays(ADdays){
       var list='十一二三四五六七八九'
       return list[ADdays];
     },
+
     lunar(ADdays){
       if (ADdays > 30){
         ADdays = ADdays % 30;
