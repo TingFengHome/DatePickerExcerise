@@ -17,7 +17,7 @@ new Vue({
 
       if (Math.random()<0.4){
         var count = Math.random() * 3;
-        var minute = parseInt(Math.random()*3)*15;
+        var minute = parseInt(Math.random()*4)*15;
         for( o = 0; o < count; o++){
           newDay.events.push({
             title: ['整理房間','約會','學習程式語言','運動','看書']
@@ -38,7 +38,7 @@ new Vue({
       else 
         return {'margin-left':'calc('+this.startDay+' * 100% / 7)'};
     },
-    
+
     chineseADdays(ADdays){
       var list='十一二三四五六七八九'
       return list[ADdays];
