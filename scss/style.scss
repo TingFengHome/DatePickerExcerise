@@ -29,8 +29,14 @@ html, body, #app{
   background-color: #fff;
   padding-top: 50px;
   padding-bottom: 5px;
-
+   
   >.calender{
+    >.head,.body {
+      background-color: #f3f3f3;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding-bottom: 5px;
+    }
+
     >.head {
       display: flex;
       padding-top: 50px;
@@ -86,6 +92,25 @@ html, body, #app{
           &.hasEvent{
             opacity: 1;
           }
+        }
+      }
+    }
+
+    >.todo {
+      >.items {
+        display: flex; 
+        padding: 3px 10px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        height: 40px;
+
+        >.time,.title {
+          padding: 4px 10px;
+        }
+
+        >.time {
+          width: 55px;
+          border-right: solid 2px; 
+          border-color: #3ca9f2;
         }
       }
     }

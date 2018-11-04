@@ -28,6 +28,13 @@
             :class ='{hasEvent: day.events.length>0 }'></div>
           </div>
         </div>
+        <transition-group class="todo" tag="ul" name='fade' mode='out-in'>
+          <li class="items" v-for='(todo,todoID) in nowEvents' :key='todo'>
+            <div class="time">{{todo.time}}</div>
+            <div class="title">{{todo.title}}</div>
+            <div class="removeBTN" @click='nowEvents.splice(todoID,1)'> X </div>
+          </li>
+        </transition-group> >
       </div>
     </div>
   </div>

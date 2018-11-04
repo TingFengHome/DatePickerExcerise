@@ -8,6 +8,17 @@ new Vue({
     lunarPan: 5,
   },
 
+  computed: {
+    nowEvents(){
+      var day = this.days[this.selectedDay];
+      if (day){
+        return day.events;
+      }else{
+        return [];
+      }
+    },
+  },
+
   mounted() {
     for(var i = 1; i <= 31; i++){
       var newDay = {
@@ -17,12 +28,12 @@ new Vue({
 
       if (Math.random()<0.4){
         var count = Math.random() * 3;
-        var minute = parseInt(Math.random()*4)*15;
+        var minute = parseInt(Math.random()*4)*10;
         for( o = 0; o < count; o++){
           newDay.events.push({
             title: ['整理房間','約會','學習程式語言','運動','看書']
-            [parseInt(Math.random()*3)],
-            time: parseInt(Math.random()*24+':'+ (minute==0?'0':'') + minute)
+            [parseInt(Math.random()*5)],
+            time: parseInt(Math.random()*24) + ':' + (minute==0?'0':'') + minute
           });
         }
       }
